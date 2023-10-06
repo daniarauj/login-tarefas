@@ -4,13 +4,13 @@ const input = document.getElementById('input');
 
 const lista = document.getElementById('lista');
 
-let todas = []
+let todos = []
 
 function listarTarefas() {
     lista.innerHTML = '';
 
-    for(let i = 0; i < todas.length; i++) {
-        const todo = todas[i];
+    for(let i = 0; i < todos.length; i++) {
+        const todo = todos[i];
 
         const li = document.createElement('li');
         const span = document.createElement('span');
@@ -20,7 +20,7 @@ function listarTarefas() {
 
         button.innerHTML = 'Excluir';
         addEventListener('click', function() {
-            todas.splice(i, 1);
+            todos.splice(i, 1);
             listarTarefas();
         });
 
@@ -39,7 +39,7 @@ function listarTarefas() {
             return;
         }
         
-        todas.push(texto);
+        todos.push(texto);
         input.value = ''
         listarTarefas();
     })
